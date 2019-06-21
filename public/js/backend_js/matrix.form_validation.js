@@ -230,4 +230,16 @@ $(document).ready(function(){
 		}
 		return false;
 	});
+	$("#delPrd").click(function(){
+		if(confirm('Are you sure you want to delete this product?')){
+			return true;
+		}
+		return false;
+	});
+	$("#delRev").click(function(){
+		if(confirm('Are you sure you want to delete this review?')){
+			return true;
+		}
+		return false;
+	});
 });

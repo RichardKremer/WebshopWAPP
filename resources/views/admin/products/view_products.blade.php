@@ -34,11 +34,11 @@
                 
                   <td>{{ $product->inStock }}</td>
                   <td>
-                    <img src="{{ asset('/images/backend_images/products/small/'.$product->image_url) }}">
+                    <img src="{{ asset('/images'.$product->image_url) }}">
                   </td>
                   <td class="center"><a href="#myModal{{ $product->id }}" data-toggle="modal" class="btn btn-success btn-mini">Info </a><br> <a href="{{ url('/admin/edit-product/'.$product->id) }}"
                     class="btn btn-primary btn-mini">Edit</a><br>
-                  <a id="delCat" href="{{ url('/admin/delete-product/'.$product->id) }}" class="btn btn-danger btn-mini">Delete</a></td>
+                  <a id="delPrd" href="{{ url('/admin/delete-product/'.$product->id) }}" class="btn btn-danger btn-mini">Delete</a></td>
                 </tr>
 
                

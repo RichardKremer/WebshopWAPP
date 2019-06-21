@@ -10,10 +10,21 @@
         <li><a href="{{ url('/admin/view-categories') }}">View categories</a></li>
       </ul>
     </li>
+    <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Subcategories</span> </a>
+      <ul>
+        <li><a href="{{ url('/admin/add-subcategory') }}">Add Subcategory</a></li>
+        <li><a href="{{ url('/admin/view-subcategories') }}">View Subcategories</a></li>
+      </ul>
+    </li>
     <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Products</span> </a>
       <ul>
         <li><a href="{{ url('/admin/add-product') }}">Add Product</a></li>
         <li><a href="{{ url('/admin/view-products') }}">View products</a></li>
+      </ul>
+    </li>
+    <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Reviews</span> </a>
+      <ul>
+        <li><a href="{{ url('/admin/view-reviews') }}">View Reviews</a></li>
       </ul>
     </li>
     <!--

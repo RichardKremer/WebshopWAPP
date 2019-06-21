@@ -13,16 +13,16 @@
   <div class="container-fluid">
     <div class="quick-actions_homepage">
       <ul class="quick-actions">
-        <li class="bg_lb"> <a href="index.html"> <i class="icon-dashboard"></i> Return to the Webshop </a> </li>
-        <li class="bg_lg"> <a href="charts.html"> <i class="icon-signal"></i> Add Category</a> </li>
-        <li class="bg_ly"> <a href="widgets.html"> <i class="icon-inbox"></i> Add Product </a> </li>
+        <li class="bg_lb"> <a href="http://127.0.0.1:8000/"> <i class="icon-home"></i> Return to the Webshop </a> </li>
+        <li class="bg_lg"> <a href="{{url('/admin/add-category')}}"> <i class="icon-plus-sign-alt"></i> Add Category</a> </li>
+        <li class="bg_ly"> <a href="{{url('/admin/add-product')}}"> <i class="icon-plus-sign-alt"></i> Add Product </a> </li>
        
       </ul>
     </div>
     <div class="span3">
               <ul class="site-stats">
-                <li class="bg_lg"><i class="icon-user"></i> <strong>???</strong> <small>Total Users</small></li>
-                <li class="bg_lg"><i class="icon-user"></i> <strong>{{ count($products) }}</strong> <small>Total Products</small></li>
+              <li class="bg_lg"><i class="icon-user"></i> <strong>{{ count($users) }}</strong> <small>Registered Users</small></li>
+                <li class="bg_lg"><i class="icon-shopping-cart"></i> <strong>{{ count($products) }}</strong> <small>Total Products</small></li>
               </ul>
             </div>
 <!--
@@ -60,7 +60,7 @@
           <div class="widget-title bg_ly" data-toggle="collapse" href="#collapseG2"><span class="icon"><i class="icon-chevron-down"></i></span>
             <h5>Latest Posts</h5>
           </div>
-          <div class="widget-content nopadding collapse in" id="collapseG2">
+          {{-- <div class="widget-content nopadding collapse in" id="collapseG2">
             <ul class="recent-posts">
               <li>
                 <div class="user-thumb"> <img width="40" height="40" alt="User" src="{{ asset('images/backend_images/demo/av1.jpg') }}"> </div>
@@ -75,7 +75,7 @@
                 </div>
               </li>
               <li>
-                <div class="user-thumb"> <img width="40" height="40" alt="User" src="{{ asset('images/backend_images/demo/av4.jpg') }}"> </div>
+                <div class="user-thumb"> <img width="40" height="40" alt="User" src="{{ asset('images/backend_images/demo/av4.jpg') }}"> </div> --}}
                 <div class="article-post"> <span class="user-info">  </span>
                   <p><a href="#"></a> </p>
                 </div>

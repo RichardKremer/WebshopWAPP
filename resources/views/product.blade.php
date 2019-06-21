@@ -39,6 +39,10 @@
                 <p class="card-text">In stock: {{ $product->inStock }}</p>
                 <p class="card-text">Rating: {{ $rating }}</p>
                 <p class="card-text"><small class="text-muted">€ {{ $product->price }}</small></p>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                Submit Review
+                </button>
             </div>
         </div>
     </div>
@@ -46,10 +50,7 @@
 
 @if (Auth::check())
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-    Launch demo modal
-</button>
+
 
 <!-- Modal -->
 <form method="POST" action="{{ url('addReview') }}">

@@ -24,9 +24,12 @@ class AdminController extends Controller
     }
     public function dashboard(){
         $products = Product::all();
+        $users = User::all();
         $data = [
-            'products' => $products
+            'products' => $products,
+            'users' => $users
         ];
+        
         if(Session::has('adminSession')){
             //Perform all dashboard tasks
         }else{

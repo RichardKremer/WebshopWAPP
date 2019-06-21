@@ -27,10 +27,22 @@ Route::group(['middleware' => ['auth']],function(){
 	Route::match(['get','post'],'/admin/delete-category/{id}','CategoryController@deleteCategory');
 	Route::get('/admin/view-categories','CategoryController@viewCategories');
 
+	//Subcategorie routes admin
+	Route::match(['get','post'],'/admin/add-subcategory','SubCategoriesController@addSubCategory');
+	Route::match(['get','post'],'/admin/edit-subcategory/{id}','SubCategoriesController@editSubcategory');
+	Route::match(['get','post'],'/admin/delete-subcategory/{id}','SubCategoriesController@deleteSubcategory');
+	Route::get('/admin/view-subcategories','SubCategoriesController@viewCategories');
+
 	// Products Routes
 	Route::match(['get','post'],'/admin/add-product','AdminProductsController@addProduct');
 	Route::get('/admin/view-products','AdminProductsController@viewProducts');
 	Route::match(['get','post'],'/admin/edit-product/{id}','AdminProductsController@editProduct');
+	
+	// Review Routes
+	Route::get('/admin/view-reviews','AdminProductsController@viewReviews');
+	Route::match(['get','post'],'/admin/delete-review/{id}','AdminProductsController@deleteReview');
+
+
 });
 
 Route::get('/logout', 'AdminController@logout');

@@ -8,7 +8,7 @@ class SubCategory extends Model
 {
     // variabele om te vertellen wat ingevuld mag worden door de user
     protected $fillable = [
-        'category_id', 'name', 'summary'
+        'subcategory_id', 'name', 'summary'
     ];
 
     // method die de relatie tegenover de category class aangeeft

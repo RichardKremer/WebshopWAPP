@@ -9,7 +9,7 @@
     <img class="card-img-top" src={{ Auth::user()->img_url }}>
     <ul class="list-group list-group-flush">
         <li class="list-group-item">E-mail: {{ Auth::user()->email }}</li>
-        <li class="list-group-item">{{ Auth::user()->name }}</li>
+        <li class="list-group-item">Username: {{ Auth::user()->name }}</li>
     </ul>
 </div>
 
