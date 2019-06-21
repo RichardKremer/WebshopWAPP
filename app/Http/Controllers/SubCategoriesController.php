@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Subcategory;
 use App\Category;   
-
+use App\Product;
 class SubCategoriesController extends Controller
 {
         public function addSubCategory(Request $request) {
@@ -21,14 +21,14 @@ class SubCategoriesController extends Controller
             }
             // Level variable die alle main categoriëen die de parent id 0 hebben bevat
             $levels = Subcategory::get();
-    
+
             $categories = Category::get();
             $categories_dropdown = "<option selected disabled>Select</option>";
             foreach($categories as $cat){
-            $categories_dropdown .= "<option value='".$cat->id."'>".$cat->name."</option>";
+                $categories_dropdown .= "<option value='".$cat->id."'>".$cat->name."</option>";
+            }
             return view('admin.subcategories.add_subcategory')->with(compact('levels','categories_dropdown'));
 
-        }
         }
         public function editSubcategory(Request $request, $id = null){
             if($request->isMethod('post')){
