@@ -42,6 +42,11 @@ Route::group(['middleware' => ['auth']],function(){
 	Route::get('/admin/view-reviews','AdminProductsController@viewReviews');
 	Route::match(['get','post'],'/admin/delete-review/{id}','AdminProductsController@deleteReview');
 
+	
+	// User Routes
+	Route::get('/admin/view-users','AdminProductsController@viewUsers');
+	Route::match(['get','post'],'/admin/delete-user/{id}','AdminProductsController@deleteUser');
+
 
 });
 

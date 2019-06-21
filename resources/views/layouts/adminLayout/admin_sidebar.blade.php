@@ -22,6 +22,12 @@
         <li><a href="{{ url('/admin/view-products') }}">View products</a></li>
       </ul>
     </li>
+    
+    <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Users</span> </a>
+      <ul>
+        <li><a href="{{ url('/admin/view-users') }}">View Users</a></li>
+      </ul>
+    </li>
     <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Reviews</span> </a>
       <ul>
         <li><a href="{{ url('/admin/view-reviews') }}">View Reviews</a></li>

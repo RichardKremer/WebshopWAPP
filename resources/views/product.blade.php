@@ -95,10 +95,53 @@
                             @enderror
                         </div>
                     </div>
+                    <style>
+                        .slider {
+                        -webkit-appearance: none;
+                        width: 100%;
+                        height: 15px;
+                        border-radius: 5px;
+                        background: #d3d3d3;
+                        outline: none;
+                        opacity: 0.7;
+                        -webkit-transition: .2s;
+                        transition: opacity .2s;
+                        }
+                        .slider::-webkit-slider-thumb {
+                        -webkit-appearance: none;
+                        appearance: none;
+                        width: 25px;
+                        height: 25px;
+                        border-radius: 50%; 
+                        background: #4CAF50;
+                        cursor: pointer;
+                        }
+                        .slider::-moz-range-thumb {
+                        width: 25px;
+                        height: 25px;
+                        border-radius: 50%;
+                        background: #4CAF50;
+                        cursor: pointer;
+                        }
+                        </style>
 
-                    <label for="rating">Rating: </label>
-                    <input type="range" class="custom-range" name="rating" min="0" max="5" id="rating">
-                
+                    <label for="rating">Rating: <b><span id="values"></span></b></label>
+                    <div class="d-flex justify-content-center my-4">
+                    <span class="font-weight-bold purple-text mr-2 mt-1"></span>
+                    <form class="range-field w-75">
+                    <input type="range" class="slider" name="rating" min="0" max="5" id="rating">
+                    </form>
+                    <span class="font-weight-bold purple-text ml-2 mt-1"></span>
+                    </div>
+
+                    <script>
+                    var slider = document.getElementById("rating");
+                    var output = document.getElementById("values");
+                    output.innerHTML = slider.value;
+                    slider.oninput = function() {
+                    output.innerHTML = this.value;
+                    }
+                    </script>
                     <input id="product" type="text" name="product" value="{{ $product->id }}" hidden readonly>
                     <input id="user" type="text" name="user" value="{{ Auth::user()->id }}" hidden readonly>
                 
@@ -133,7 +176,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ $review->title }}</h5>
                         <p class="card-text">{{ $review->description }}</p>
-                        <h6 class="card-subtitle mb-2 text-muted">Gebruiker: {{ $review->user->name }}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">Username: {{ $review->user->name }}</h6>
                     </div>
                 </div>
 

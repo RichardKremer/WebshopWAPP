@@ -12,6 +12,7 @@ use App\Category;
 use App\SubCategory;
 use App\Product;
 use App\Review;
+use App\User;
 
 class AdminProductsController extends Controller
 {
@@ -41,7 +42,7 @@ class AdminProductsController extends Controller
                     Image::make($image_tmp)->resize(364,364)->save($small_image_path);
 
                     // image name in products table opslaan
-                    $product->image_url = "/images".$filename;
+                    $product->image_url = "/images/".$filename;
             }
         }
            $product->save();
@@ -145,7 +146,17 @@ class AdminProductsController extends Controller
     public function deleteReview($id = null){
         if(!empty($id)){
             Review::where(['id'=>$id])->delete();
-            return redirect()->back()->with('flash_message_success','Category deleted Successfully!');
+            return redirect()->back()->with('flash_message_success','Review deleted Successfully!');
+        }
+    }
+    public function viewUsers() {
+        $users = User::get();
+        return view ('admin.users.view_users')->with(compact('users'));
+    }
+    public function deleteUser($id = null){
+        if(!empty($id)){
+            User::where(['id'=>$id])->delete();
+            return redirect()->back()->with('flash_message_success','User deleted Successfully!');
         }
     }
 }

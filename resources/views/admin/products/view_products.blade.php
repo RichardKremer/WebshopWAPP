@@ -1,4 +1,4 @@
-@extends('layouts.adminLayout.admin_design');
+@extends('layouts.adminLayout.admin_design')
 @section('content')
 <div id="content">
   <div id="content-header">
@@ -34,7 +34,7 @@
                 
                   <td>{{ $product->inStock }}</td>
                   <td>
-                    <img src="{{ asset('/images'.$product->image_url) }}">
+                    <img width="50" src="{{ asset($product->image_url) }}">
                   </td>
                   <td class="center"><a href="#myModal{{ $product->id }}" data-toggle="modal" class="btn btn-success btn-mini">Info </a><br> <a href="{{ url('/admin/edit-product/'.$product->id) }}"
                     class="btn btn-primary btn-mini">Edit</a><br>
