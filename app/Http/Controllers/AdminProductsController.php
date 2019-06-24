@@ -159,4 +159,10 @@ class AdminProductsController extends Controller
             return redirect()->back()->with('flash_message_success','User deleted Successfully!');
         }
     }
+    public function deleteProduct($id = null){
+        if(!empty($id)){
+            Product::where(['id'=>$id])->delete();
+            return redirect()->back()->with('flash_message_success','Product deleted Successfully!');
+        }
+    }
 }

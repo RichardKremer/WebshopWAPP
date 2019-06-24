@@ -95,9 +95,9 @@
         <p class="card-text"><small class="text-muted">Products on page: {{count($products)}}</small></p>
         @foreach($products as $product)
         <div class="card mb-3" style="width:33%; display:inline-block;">
-            <img class="card-img-top" src={{ $product->image_url }} alt={{ $product->product_name }}>
+            <img class="card-img-top" src={{ asset($product->image_url) }} alt={{ $product->product_name }}>
             <div class="card-body">
-                <h5 class="card-title">{{ $product->name }}</h5>
+                <h5 class="card-title">{{ $product->product_name }}</h5>
                 <p class="card-text">
                     {{ (strlen($product->description) > 50) ? substr($product->description, 0, 50) . '...' : $product->description }}
                 </p>
