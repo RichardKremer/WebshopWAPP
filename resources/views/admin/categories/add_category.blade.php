@@ -18,7 +18,7 @@
           </div>
           <div class="widget-content nopadding">
             <form class="form-horizontal" method="post" action="{{ url('/admin/add-category') }}" name="add_category" id="add_category" novalidate="novalidate">
-            {{csrf_field()}}
+            {{csrf_field()}} <!-- csrf_field() is voor het beveiligen tegen bots dat als een bot de form probeert intevullen dat het dan niet werkt -->
               <div class="control-group">
                 <label class="control-label">Category Name</label>
                 <div class="controls">

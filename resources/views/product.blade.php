@@ -39,19 +39,20 @@
                 <p class="card-text">In stock: {{ $product->inStock }}</p>
                 <p class="card-text">Rating: {{ $rating }}</p>
                 <p class="card-text"><small class="text-muted">€ {{ $product->price }}</small></p>
+                @if (Auth::check())
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
                 Submit Review
                 </button>
+                @endif
             </div>
         </div>
     </div>
 </div>
 
+
+
 @if (Auth::check())
-
-
-
 <!-- Modal -->
 <form method="POST" action="{{ url('addReview') }}">
 @csrf
@@ -160,9 +161,7 @@
         </div>
     </div>
 </form>
-
 @endif
-
 <div class="mt-5">
     <div class="card">
         <div class="card-header">

@@ -5,6 +5,7 @@ use Auth;
 use Session;
 use App\User;
 use App\Product;
+use App\Review;
 use Illuminate\Support\Facades\Hash;
 class AdminController extends Controller
 {
@@ -25,9 +26,11 @@ class AdminController extends Controller
     public function dashboard(){
         $products = Product::all();
         $users = User::all();
+        $reviews = Review::all();
         $data = [
             'products' => $products,
-            'users' => $users
+            'users' => $users,
+            'reviews' => $reviews
         ];
         
         if(Session::has('adminSession')){
